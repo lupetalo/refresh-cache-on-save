@@ -15,7 +15,6 @@ add_action( 'save_post', function ( $post_id ) {
 
 add_action( 'visit_url', function ($post_url){
 	if (is_callable('shell_exec')){
-        //error_log('shell_exec run for: ' . $post_url);
 	    echo shell_exec("curl $post_url");
 	    echo shell_exec("curl -I  $post_url");
 	} else {
